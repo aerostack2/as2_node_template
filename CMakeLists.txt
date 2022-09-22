@@ -12,15 +12,14 @@ if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
-
 # find dependencies
 set(PROJECT_DEPENDENCIES
   ament_cmake
   rclcpp
   as2_core
-  std_msgs
   as2_msgs
   std_srvs
+  std_msgs
 )
 
 foreach(DEPENDENCY ${PROJECT_DEPENDENCIES})
@@ -30,18 +29,25 @@ endforeach()
 include_directories(
   include
   include/${PROJECT_NAME}
+  #uncomment if using Eigen3
+  #{EIGEN3_INCLUDE_DIRS} 
 )
 
 set(SOURCE_CPP_FILES 
   src/as2_node_template.cpp
 )
 
-# set(INCLUDE_HPP_FILES 
-#   include/${PROJECT_NAME}/as2_node_template_libs.hpp
-# )
-
 add_executable(${PROJECT_NAME}_node src/as2_node_template_node.cpp ${SOURCE_CPP_FILES})
 ament_target_dependencies(${PROJECT_NAME}_node ${PROJECT_DEPENDENCIES})
+
+
+if(BUILD_TESTING)
+  find_package(ament_cmake_cppcheck REQUIRED)
+  find_package(ament_cmake_clang_format REQUIRED)
+  
+  ament_cppcheck(src/ include/ tests/)
+  ament_clang_format(src/ include/ tests/ --config ${CMAKE_CURRENT_SOURCE_DIR}/.clang-format)
+endif()
 
 install(DIRECTORY
   launch
