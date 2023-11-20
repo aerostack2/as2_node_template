@@ -29,7 +29,7 @@ Run colcon test in by:
 colcon test --packages-select as2_node_template
 ```
    
-Optional, add verbosity with `--event-handlers console_direct`
+Optional, add verbosity with `--event-handlers console_direct+`
 
 ## References
 
