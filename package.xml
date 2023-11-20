@@ -4,7 +4,6 @@
   <name>as2_node_template</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="miguel.fernandez.cortizas@upm.es">Miguel Fernandez-Cortizas</maintainer>
   <license>BDS-3</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -12,9 +11,8 @@
   <depend>ament_cmake</depend>
   <depend>rclcpp</depend>
   <depend>as2_core</depend>
-  <depend>std_msgs</depend>
   <depend>as2_msgs</depend>
-  <depend>std_srvs</depend>
+  <depend>std_msgs</depend>
 
   <!-- linting test dependencies -->
   <test_depend>ament_lint_auto</test_depend>
