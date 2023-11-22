@@ -39,11 +39,11 @@ TEST(As2NodeTemplate, test_constructor) {
   EXPECT_NO_THROW(std::shared_ptr<As2NodeTemplate> node = std::make_shared<As2NodeTemplate>());
 }
 
+}  // namespace as2_node_template
+
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
-
-}  // namespace as2_node_template

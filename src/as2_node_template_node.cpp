@@ -30,13 +30,10 @@
 #include "as2_core/core_functions.hpp"
 #include "as2_node_template.hpp"
 
-namespace as2_node_template
-{
-
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  auto node = std::make_shared<As2NodeTemplate>();
+  auto node = std::make_shared<as2_node_template::As2NodeTemplate>();
 
   node->preset_loop_frequency(50);  // Node frequency for run and
                                     // callbacks
@@ -50,5 +47,3 @@ int main(int argc, char * argv[])
   rclcpp::shutdown();
   return 0;
 }
-
-}  // namespace as2_node_template
