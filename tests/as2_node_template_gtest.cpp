@@ -27,32 +27,23 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 
-#include "as2_node_template.hpp"
+#include <gtest/gtest.h>
+#include <memory>
+
+#include "as2_node_template/as2_node_template.hpp"
 
 namespace as2_node_template
 {
 
-As2NodeTemplate::As2NodeTemplate()
-: as2::Node("as2_node_template") {}
-
-using CallbackReturn = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
-
-CallbackReturn As2NodeTemplate::on_configure(const rclcpp_lifecycle::State & _state)
-{
-  // Set subscriptions, publishers, services, actions, etc. here.
-  return CallbackReturn::SUCCESS;
+TEST(As2NodeTemplate, test_constructor) {
+  EXPECT_NO_THROW(std::shared_ptr<As2NodeTemplate> node = std::make_shared<As2NodeTemplate>());
 }
 
-CallbackReturn As2NodeTemplate::on_deactivate(const rclcpp_lifecycle::State & _state)
+int main(int argc, char * argv[])
 {
-  // Clean up subscriptions, publishers, services, actions, etc. here.
-  return CallbackReturn::SUCCESS;
-}
-
-CallbackReturn As2NodeTemplate::on_shutdown(const rclcpp_lifecycle::State & _state)
-{
-  // Clean other resources here.
-  return CallbackReturn::SUCCESS;
+  rclcpp::init(argc, argv);
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }
 
 }  // namespace as2_node_template
