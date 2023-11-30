@@ -26,16 +26,24 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+/**
+ * @file as2_node_template_gtest.cpp
+ *
+ * As2NodeTemplate class gtest
+ *
+ * @author CVAR-UPM <cvar.upm3@gmail.com>
+ */
+
+#include "as2_node_template/as2_node_template.hpp"
 
 #include <gtest/gtest.h>
 #include <memory>
 
-#include "as2_node_template/as2_node_template.hpp"
-
 namespace as2_node_template
 {
 
-TEST(As2NodeTemplate, test_constructor) {
+TEST(As2NodeTemplate, test_constructor)
+{
   EXPECT_NO_THROW(std::shared_ptr<As2NodeTemplate> node = std::make_shared<As2NodeTemplate>());
 }
 

@@ -26,6 +26,13 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+/**
+ * @file as2_node_template.hpp
+ *
+ * As2NodeTemplate class definition
+ *
+ * @author CVAR-UPM <cvar.upm3@gmail.com>
+ */
 
 #ifndef AS2_NODE_TEMPLATE__AS2_NODE_TEMPLATE_HPP_
 #define AS2_NODE_TEMPLATE__AS2_NODE_TEMPLATE_HPP_

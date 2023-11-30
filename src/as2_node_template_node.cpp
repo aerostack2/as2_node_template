@@ -26,9 +26,17 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+/**
+ * @file as2_node_template_node.cpp
+ *
+ * As2NodeTemplate node implementation
+ *
+ * @author CVAR-UPM <cvar.upm3@gmail.com>
+ */
+
+#include "as2_node_template/as2_node_template.hpp"
 
 #include "as2_core/core_functions.hpp"
-#include "as2_node_template.hpp"
 
 int main(int argc, char * argv[])
 {

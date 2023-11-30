@@ -26,14 +26,22 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+/**
+ * @file as2_node_template.cpp
+ *
+ * As2NodeTemplate class implementation
+ *
+ * @author CVAR-UPM <cvar.upm3@gmail.com>
+ */
 
-#include "as2_node_template.hpp"
+#include "as2_node_template/as2_node_template.hpp"
 
 namespace as2_node_template
 {
 
 As2NodeTemplate::As2NodeTemplate()
-: as2::Node("as2_node_template") {}
+: as2::Node("as2_node_template")
+{}
 
 using CallbackReturn = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
 
