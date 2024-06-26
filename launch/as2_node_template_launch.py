@@ -29,11 +29,11 @@
 # POSSIBILITY OF SUCH DAMAGE.
 """as2_node_template lauch file."""
 
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import EnvironmentVariable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
-from launch.actions import DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration, EnvironmentVariable, PathJoinSubstitution
-from launch import LaunchDescription
 
 
 def generate_launch_description():
@@ -52,11 +52,11 @@ def generate_launch_description():
                               default_value=default_config_file,
                               description='as2_node_template configuration file'),
         Node(
-            package="as2_node_template",
-            executable="as2_node_template_node",
-            name="as2_node_template",
+            package='as2_node_template',
+            executable='as2_node_template_node',
+            name='as2_node_template',
             namespace=LaunchConfiguration('namespace'),
-            output="screen",
+            output='screen',
             emulate_tty=True,
             parameters=[
                 LaunchConfiguration('config_file'),
